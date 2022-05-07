@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.header {
+  display: inline-flex;
+  margin: 2rem auto;
+  font-size: 1.5rem;
+}
+
+h1 {
+  margin: 0;
+}
+
+.logo {
+  max-height: 4rem;
+  max-width: 4rem;
+}
+
