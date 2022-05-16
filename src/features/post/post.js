@@ -1,27 +1,32 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { postsSelector } from '../../components/posts/PostsSlice';
 import upArrow from '../../assets/upArrow.png';
 import downArrow from '../../assets/downArrow.png';
 import commentIcon from '../../assets/commentIcon.png';
-import sample from '../../assets/sample.png';
 
 export const Post = () => {
+    const posts = useSelector(postsSelector);
+    const samplePostId = 1;
+    const post = posts.posts[samplePostId];
+
 
     return (
         <div className='post'>
-            <h1>Post title</h1>
+            <h1>{post.title}</h1>
             <div className='karma'>
-                <input className='arrow' type='image' src={upArrow}/>
-                <p className='karmaPoints'>100</p>
-                <input className='arrow' type='image' src={downArrow}/>
+                <input className='arrow' type='image' src={upArrow} alt='up arrow'/>
+                <p className='karmaPoints'>{post.karma}</p>
+                <input className='arrow' type='image' src={downArrow} alt='down arrow'/>
             </div>
 
-            <img src={sample}></img>
+            <img src={post.image} alt='content'></img>
             <div className='postFooter'>
-                <div className='author'>Timothy McMurray</div>
-                <div className='timestamp'>10 days</div>
+                <div className='author'>{post.author}</div>
+                <div className='timestamp'>1{post.date}</div>
                 <div className='comments'>
-                    <img src={commentIcon}/>
-                    <div className='commentCount'>120</div>
+                    <img src={commentIcon} alt='comments'/>
+                    <div className='commentCount'>{post.comments}</div>
                 </div>
             </div>
         </div>
