@@ -27,7 +27,7 @@ export const Posts = () => {
                         image: post.data.thumbnail,
                         author: post.data.author,
                         date: created,
-                        comments: ''
+                        comments: post.data.num_comments
                     }))
                 })
             } catch (e) {

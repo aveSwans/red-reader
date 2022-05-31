@@ -4,10 +4,14 @@ import { postsSelector } from '../../components/posts/PostsSlice';
 import upArrow from '../../assets/upArrow.png';
 import downArrow from '../../assets/downArrow.png';
 import commentIcon from '../../assets/commentIcon.png';
+import { addKarma, removeKarma } from '../../components/posts/PostsSlice';
+import { useDispatch } from 'react-redux';
 
 export const Post = ({id}) => {
     const posts = useSelector(postsSelector);
     const post = posts.posts[id];
+    const dispatch = useDispatch();
+    const realDate = new Date(post.date * 1000);
 
     return (
         <div className='post'>
@@ -18,12 +22,12 @@ export const Post = ({id}) => {
                 <input className='arrow' type='image' src={downArrow} alt='down arrow'/>
             </div>
 
-            <img src={post.image} alt='content'></img>
+            <img src={post.image} alt={post.title}></img>
             <div className='postFooter'>
                 <div className='author'>{post.author}</div>
-                <div className='timestamp'>1{post.date}</div>
+                <div className='timestamp'>{realDate.toLocaleString()}</div>
                 <div className='comments'>
-                    <img src={commentIcon} alt='comments'/>
+                    <img id='commentIcon' src={commentIcon} alt='comments'/>
                     <div className='commentCount'>{post.comments}</div>
                 </div>
             </div>

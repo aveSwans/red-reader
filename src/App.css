@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: antiquewhite;
 }
 
 /*header styles*/
@@ -26,10 +27,11 @@ h1 {
   border: 1px solid black;
   border-radius: 5%;
   justify-content: space-evenly;
-  max-width: 30%;
+  width: 60%;
   display: inline-flex;
   flex-wrap: wrap;
   margin: 20px;
+  background-color: aliceblue;
 }
 
 .karma {
@@ -56,15 +58,20 @@ h1 {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
+  align-items: center;
 }
 
 .postFooter .comments {
-  max-width: 32px;
   display: flex;
-  align-items: center;
   margin-bottom: 8px;
+  align-items: center;
 }
 
 .commentCount {
   margin-left: 2px;
+}
+
+#commentIcon {
+  height: 2em;
+  margin-bottom: 0;
 }
