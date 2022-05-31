@@ -1,9 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import sample from "../../assets/sample.png"
 
-const initialState = {posts: {}};
-
-const testInitialState = {posts: {
+/*const testInitialState = {posts: {
     1: {
         id: 1,
         karma: 23,
@@ -11,12 +9,29 @@ const testInitialState = {posts: {
         image: sample,
         author: 'Franken Stein',
         comments: 45
+    },
+    2: {
+        id: 2,
+        karma: 44,
+        title: 'Hello there',
+        image: sample,
+        author: 'Mykonos Miriam',
+        comments: 65
+    },
+    3: {
+        id: 3,
+        karma: 68,
+        title: 'nope nope nope',
+        image: sample,
+        author: 'Heidi Deidi',
+        comments: 0
     }
-}};
+}};*/
+const initialState = {posts: {}};
 
 const posts = createSlice({
     name: 'posts',
-    initialState: testInitialState,
+    initialState: initialState,
     reducers: {
         addPost: (state, action) => {
             const {id, karma, title, image, author, date, comments} = action.payload;

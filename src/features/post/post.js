@@ -5,11 +5,9 @@ import upArrow from '../../assets/upArrow.png';
 import downArrow from '../../assets/downArrow.png';
 import commentIcon from '../../assets/commentIcon.png';
 
-export const Post = () => {
+export const Post = ({id}) => {
     const posts = useSelector(postsSelector);
-    const samplePostId = 1;
-    const post = posts.posts[samplePostId];
-
+    const post = posts.posts[id];
 
     return (
         <div className='post'>
